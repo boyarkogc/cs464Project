@@ -1,0 +1,10 @@
+README - Project 2 Group 13
+
+DEFAULT USERS:(already in database)
+[firstName, lastName, userName, gender, mobileNumber, email, password, question_id, question_answer, is_admin]
+"admin", "admin", "admin", 1, "3333333333", "Admin@Admin.com", "admin", 1, "red", 1 ;
+"John", "Doe", "johnDoe", 1, "123-1234", "john@doe.com", "johnDoe", 2, "ron", 0 ;
+"Jenny", "Smith", "jennySmith", 0, "00000000", "jenny@smith.com", "jennySmith", 3, "Fort Collins", 0;
+"Kate", "Date", "kateDate", 0, "123-1234", "kate@Date.com", "kateDate", 3, "Denver", 0;
+"Something", "Something", "somethingSomething", 1, "11111111", "something@something.com", "somethingSomething", 1, "blue", 0 );
+

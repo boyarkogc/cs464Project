@@ -1,0 +1,58 @@
+*,html {
+	margin:0px;
+}
+.main {
+	text-align: left;
+}
+.main li {
+	list-style-type: none;
+}
+.form-control {
+	color:#000;
+	
+}
+body {
+	color:#000;
+}
+a {
+	color:#000;
+}
+.btn-primary {
+	border-color: #2E6DA4;
+	background-color: #337AB7
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+h1 {
+	text-align:center;
+}
+h3 {
+	text-align:center;
+	padding:10px;
+}
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.alert-success hr {
+  border-top-color: #c9e2b3;
+}
+.alert-success .alert-link {
+  color: #2b542c;
+}
+img {
+	max-width:100%;
+}
+#nonFriends, #friendsList {
+	padding:5px;
+	border: 1px solid #eee;
+}
