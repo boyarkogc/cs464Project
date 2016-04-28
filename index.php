@@ -65,35 +65,7 @@
 			</div>
 		<?php } ?>
 		</div>
-		<div class="row" style="margin-top:15px;">
-		<h1 style="text-align:center;">All Users</h1>
-		<?php
-			$allUsers = $databaseObj->getUsers();
-			foreach($allUsers as $singleUser) {
-		?>
-      <div class="col-md-2">
-				<?php 
-					if(is_null($singleUser->imageLocation)) {
-						//no profile image selected, use random if possible, else use default
-						$user = $databaseObj->getUser($singleUser->userName);
-						$imageData = $databaseObj->getUserImages($user);
-						if($imageData !== false) {
-							//then we have images
-							echo "<a href=\"profile.php?userName=".$user->userName."\"><img src=\"".$imageData[0]."\" style=\"max-width:100%;\"alt=\"".$user->userName."'s Profile Image\" class=\"img-rounded\"></a>";
-						} else {//no uploaded images for user
-							echo "<a href=\"profile.php?userName=".$user->userName."\"><img src=\"images/defaultprofile.jpg\" style=\"max-width:100%;\"alt=\"".$user->userName."'s Profile Image\" class=\"img-rounded\"></a>";
-						}
-					} else {
-						//use user profile image
-						$user = $databaseObj->getUser($singleUser->userName);
-						echo "<a href=\"profile.php?userName=".$user->userName."\"><img src=\"".$databaseObj->getUserProfileImage($user->userName)."\" style=\"max-width:100%;\"alt=\"".$user->userName."'s Profile Image\" class=\"img-rounded\"></a>";
-					}
-				?>
-			</div>
-		<?php } ?>
-		</div>
+
  </div>
 </div>
-<?php
-	require "footer.php";
-?>
+
