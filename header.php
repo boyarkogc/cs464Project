@@ -42,7 +42,7 @@ require "global.php";
 	        	if(isLoggedIn()) {
 	        		$userName = $_SESSION['userName'];
 	        		echo "<li><a href=\"profile.php?userName= $userName\">Welcome! $userName</a></li>";
-				echo "<li><a href=\"logout.php\">Log out.</a></li>";
+				echo "<li><a href=\"logout.php\">Logout</a></li>";
 				
 	        	} 
 	        ?>
