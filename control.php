@@ -35,7 +35,7 @@ function logout(){
 /****************************************************************************/
 /*****		 Session start and begining php for each page		*****/
 /****************************************************************************/
-
+session_save_path("tmp");
 session_name ( $sessionName );
 session_start ();
 
