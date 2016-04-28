@@ -8,7 +8,7 @@ $siteDescription = "1st project for CT310 at CSU";
 $siteKeywords = "CT310";
 $siteAuthors = "Wade, Jeff";
 $siteStylesheet = "projectstyle.css";
-$whitelist = array("129.82.44.","129.82.45.","129.82.46.","127.0.0.1");
+//$whitelist = array("129.82.44.","129.82.45.","129.82.46.","127.0.0.1");
 
 $sessionName = "NoCoDoghouse";
 
@@ -58,10 +58,10 @@ if(!(file_exists("images"))){
 	}
 }
 chmod("images",0755);
-foreach ($whitelist as $query) {
+/*foreach ($whitelist as $query) {
     if(substr($_SERVER['REMOTE_ADDR'], 0, strlen($query)) === $query){
 	    $_SESSION['White'] = "True";
     }
-}
+}*/
 
 ?>

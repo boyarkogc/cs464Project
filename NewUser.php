@@ -5,9 +5,9 @@ include 'top.php';
 require_once 'lib/passwordLib.php';
 
 
-if(!isset($_SESSION['White'])){
+/*if(!isset($_SESSION['White'])){
 	header('Location: /index.php');
-	}
+}*/
 ?>
 
 	<style>
