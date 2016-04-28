@@ -12,8 +12,8 @@ require "global.php";
 <head>
 	<meta charset="UTF-8" />
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-	<title>Project 2</title>
-	<link rel="stylesheet" href="http://www.cs.colostate.edu/~ct310/yr2015sp/bootstrap/css/bootstrap.min.css">
+	<title>My Trainer</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -31,8 +31,7 @@ require "global.php";
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="index.php"><img src="images/logo.png" style="max-height:25px;"></a>
-		<a class="navbar-brand" href="index.php">F & F</a>
+		<a class="navbar-brand" href="index.php">My Trainer</a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -44,12 +43,8 @@ require "global.php";
 	        		$userName = $_SESSION['userName'];
 	        		echo "<li><a href=\"profile.php?userName= $userName\">Welcome! $userName</a></li>";
 				echo "<li><a href=\"logout.php\">Log out.</a></li>";
-				if($_SESSION['is_admin'] == 1) {
-					echo "<li><a href=\"register.php\">Register</a></li>";
-				}
-	        	} else {
-					echo "<li><a href=\"index.php\">Login</a></li>";
-	        	}
+				
+	        	} 
 	        ?>
 	      </ul>
 	      <form class="navbar-form navbar-right" role="search">
