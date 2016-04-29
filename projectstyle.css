@@ -1,0 +1,216 @@
+/* 
+Color List
+-----------------------------------------------
+Dark Blue: #022D4D
+Dark Grey: #4f4f4f
+Light Grey: #E3E4E5
+Yellow: #F6AA27
+White: #FCFDFF
+
+*/
+
+/*********************************************************************/
+/*****				OVERALL				 *****/
+/*********************************************************************/
+html, body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin:0;
+    font-family: Raleway;
+}
+    
+/*********************************************************************/
+/*****				HEADER				 *****/
+/*********************************************************************/
+header {
+        background: #022D4D;
+        color: #F6AA27;
+}
+
+header a {
+        text-decoration: none;
+        color: #F6AA27;
+}
+
+
+#topBar {
+        width: 100%;
+        background: #4f4f4f;
+        text-align: right;
+        font-size: 115%;
+        font-weight: bold;
+        margin-right: .5em;
+}
+
+#topBar a:hover {
+        color: #FCFDFF;
+}
+
+#mainHeader {
+    display:table;
+	padding-left: 33%;
+}
+
+#headerLogo {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+    
+#headerMotto {
+    color:#FCFDFF;
+    display:table-cell;
+    margin:0;
+    padding-left: 50px;
+    font-size: 150%;
+    vertical-align: middle;
+}
+
+nav {
+        width: 100%;
+        background: #E3E4E5;
+        text-align: center;
+}
+
+nav a {
+        padding: .5em 3em .5em 3em;
+        text-decoration: none;
+        color: #022D4D;
+        display: inline-block;
+        font-weight: bold;
+}
+
+nav a:hover {
+        background: #4f4f4f;
+        color: #F6AA27;
+}
+    
+/*********************************************************************/
+/*****				CONTENT				 *****/
+/*********************************************************************/
+#content {
+        flex: 1;
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+div.homePhotos {
+		  float: right;
+		  width: 300px;
+		  margin: 0 0 10px 10px;
+		  padding: 4px;
+		  text-align: center; 
+}
+
+/*********************************************************************/
+/*****				Footer				 *****/
+/*********************************************************************/
+footer {
+        clear: both;
+        position: relative;
+        background: #022D4D;
+        margin-bottom: 0;
+}
+
+#mainFooter {
+        margin: 0;
+}
+
+#bottomButton{
+    width: 300px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    text-decoration: none;
+    background: #F6AA27;
+    color: #FCFDFF;
+    border: solid #FCFDFF .5px;
+    display: block;
+    font-weight: bold;
+    padding: 5px;
+
+}
+
+#bottomButton:hover{
+    background: #4f4f4f;
+    color: #F6AA27;
+}
+
+#bottomButton:active{
+    background: #FCFDFF;
+    color: #022D4D;
+}
+#copyrightBar {
+        margin: 0;
+        color: #FCFDFF;
+        background: #4F4F4F;
+        text-align: center;
+        padding-top: .5em;
+        padding-bottom: .5em;
+        font-size: .75em;
+}
+
+#copyrightBar a{
+        color: #F6AA27;
+        text-decoration: none;
+}
+    
+#copyrightBar p{
+        margin: 0;
+}
+
+
+
+/*********************************************************************/
+/*****				Page Specific CSS		 *****/
+/*********************************************************************/
+
+#Home #homeNav {
+    color: #F6AA27;
+}
+
+
+#About_Us #aboutusNav {
+    color: #F6AA27;
+}
+
+
+#Adopt #adoptNav {
+    color: #F6AA27;
+}
+
+#Add_A_Dog #addDogNav {
+    color: #F6AA27;
+}
+
+#Adopt .thumbnails {
+    max-width: 200px;
+    max-height: 200px;
+    border: solid .5px;
+}
+
+/** For Dog Pages **/
+
+#dogHeadshot {
+    width: 300px;
+    float: left;
+    height: 300px;
+}
+#dogTable {
+    margin-left:310px;
+    height: 300px;
+}
+.adoptionPage td {
+    padding: 3px;
+}
+.leftData {
+    font-weight: bold;
+}
+#dogDescription {
+    clear:both;
+    margin-top: 1em;
+}
+
