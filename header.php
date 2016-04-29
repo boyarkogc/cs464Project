@@ -20,8 +20,8 @@
     </div>
 
     <div id="mainHeader">
-       <img id="headerLogo" src="Logo.png" width="150px" height="103px"/>
-       <p id="headerMotto">Keep track of all your </p>
+       <img id="headerLogo" src="Logo1.jpg" width="150px" height="103px"/>
+       <p id="headerMotto">Keep track of all your Clients Today</p>
     </div>
 
 </header>
@@ -29,6 +29,6 @@
 <nav>
     <a href="./index.php" id="homeNav">Home</a>
     <a href="./aboutus.php" id="aboutusNav">About Us</a>
-    <a href="./adopt.php" id="adoptNav">Adopt</a>
-    <a href="./addDog.php" id="addDogNav">Add A Dog</a>
+    <a href="./adopt.php" id="adoptNav">Clients</a>
+    <a href="./addDog.php" id="addDogNav">Add A Client</a>
 </nav>
