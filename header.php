@@ -27,8 +27,6 @@
 </header>
 
 <nav>
-    <a href="./index.php" id="homeNav">Home</a>
-    <a href="./aboutus.php" id="aboutusNav">About Us</a>
     <a href="./adopt.php" id="adoptNav">Clients</a>
     <a href="./addDog.php" id="addDogNav">Add A Client</a>
 </nav>
