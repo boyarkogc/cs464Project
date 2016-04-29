@@ -46,7 +46,7 @@ require_once 'lib/passwordLib.php';
                             $loginTime = date ( "l d, M. g:i a", time () );
                             $_SESSION["loginTime"] = $loginTime;
                             $_SESSION["username"] = $usernameToCheck;
-                            header('Location: login.php');
+                            header('Location: adopt.php');
                         }
                     }
                 }	
