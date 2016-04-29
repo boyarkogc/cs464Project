@@ -1,9 +1,11 @@
 <?php
 $pageTitle = "Home";
+if (!isset($_SESSION['username'])) {
+	header('Location: login.php');
+}
 include 'control.php'; 
 include 'top.php'; 
 ?>
-
 
 <style>
 table{
@@ -11,7 +13,7 @@ table{
     margin-right:auto;
     margin-left:auto;
 }
-td{
+td {
     padding:.5em;
     text-align:center;
 }
