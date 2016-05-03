@@ -38,7 +38,7 @@ td{
 <?php include 'header.php'; ?>
 
     <div id="content">
-	<h3>Adoptable Dogs</h3>
+	<h3>My Clients</h3>
 	<form>
         
 		Search: <input type="text" onkeyup="search(this.value)" />

@@ -10,7 +10,7 @@
                 $currentPage = $_SERVER['PHP_SELF'];
                 echo "<a href='$currentPage?logout=true'>logout</a>" ;
                 echo "<p style='color:white; display:inline;'> / </p> ";
-	     } else {
+	    } else {
                 echo "<p style='color:white; display:inline;'> / </p> ";
                 echo "<a href='./login.php'>login</a>" ;
                 echo "<p style='color:white; display:inline;'> / </p> ";
@@ -27,8 +27,8 @@
 </header>
 
 <nav>
-    <a href="./index.php" id="homeNav">Home</a>
-    <a href="./aboutus.php" id="aboutusNav">About Us</a>
+    <?php if ($pageTitle != "Login"): ?>
     <a href="./adopt.php" id="adoptNav">Clients</a>
     <a href="./addDog.php" id="addDogNav">Add A Client</a>
+    <?php endif; ?>
 </nav>
