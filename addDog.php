@@ -72,7 +72,6 @@ include 'top.php';
 			<input type="hidden" name="petName" value="<?php echo $petName ?>">
 			<input type="hidden" name="petWeight" value="<?php echo $petWeight ?>">
 			<input type="hidden" name="petAge" value="<?php echo $petAge ?>">
-			<input type="hidden" name="petNeutered" value="<?php echo $petNeutered ?>">
 			<input type="hidden" name="petSD" value="<?php echo $petSD ?>">
 			<input type="hidden" name="petLD" value="<?php echo $petLD ?>">
 			<input type="hidden" name="setInfo">
@@ -85,12 +84,11 @@ include 'top.php';
 		<?php
 		} else { //Form has not been filled out
 		?>
-		    <h2>Add a Dog</h2>
+		    <h2>Add a Client</h2>
 		    <form method="post" >
-			Pet Name<br/> <input type="text" name="petName" size="30" required><br/><br/>
+			Client Name<br/> <input type="text" name="petName" size="30" required><br/><br/>
 			Weight <br/><input type="number" name="petWeight"   min="0" max="999" size="3" required> lbs.<br/><br/>
 			Age<br/> <input type="number" name="petAge"    size="3" min="0" max="999" required><br/><br/>
-			Neutered?<br/> <input type="checkbox" name="petNeutered" ><br/><br/>
 			Short Description (50 characters)<br/> <input type="text" name="petSD" maxlength="50" size="50" required><br/><br/>
 			Long Description (50-250 characters)<br/> <textarea rows="3" name="petLD" maxlength="250" style="width:40em" required></textarea><br/><br/>
 			<input type="submit" value="Submit">

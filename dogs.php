@@ -43,7 +43,6 @@ include 'top.php';
 	    <table>
 		<tr><td class="leftData" align="right">Age:</td><td><?php echo $result['age']; ?></td></tr>
 		<tr><td class="leftData" align="right">Weight:</td><td><?php echo $result['weight']; ?></td></tr>
-		<tr><td class="leftData" align="right">Spayed/Nuetered:</td><td><?php echo ($result['age']==1 ? "Yes" : "No"); ?></td></tr>
 	    </table>
 	</div>
 	<hr>
