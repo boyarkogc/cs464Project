@@ -1,63 +1,34 @@
-<?php
-session_name("wecrazy943556");
-session_start();
-date_default_timezone_set('America/Denver'); 
-if(!isset($_SESSION["startTime"])) {
-	$_SESSION["startTime"] = time();
-}
-require "global.php";
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-	<title>Project 2</title>
-	<link rel="stylesheet" href="http://www.cs.colostate.edu/~ct310/yr2015sp/bootstrap/css/bootstrap.min.css">
+<!-- start of header/banner to include on every page -->
+<header>
+    <div id="topBar">
+        <div style="display:inline; padding-right: 3em;">
+            <?php
+            if(isset($_SESSION["username"])){
+                echo "<p style='color:white; display:inline;'> / </p> ";
+                echo $_SESSION['username'];
+                echo "<p style='color:white; display:inline;'> / </p> ";
+                $currentPage = $_SERVER['PHP_SELF'];
+                echo "<a href='./login.php?logout=true'>logout</a>" ;
+                echo "<p style='color:white; display:inline;'> / </p> ";
+	    } else {
+                echo "<p style='color:white; display:inline;'> / </p> ";
+                echo "<a href='./login.php'>login</a>" ;
+                echo "<p style='color:white; display:inline;'> / </p> ";
+            }
+            ?>
+        </div>
+    </div>
 
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <div id="mainHeader">
+       <img id="headerLogo" src="Logo1.jpg" width="150px" height="103px"/>
+       <p id="headerMotto">Keep track of all your Clients Today</p>
+    </div>
 
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-	<nav class="navbar navbar-inverse navbar-static-top">
-	  <div class="container-fluid">
-	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand" href="index.php"><img src="images/logo.png" style="max-height:25px;"></a>
-		<a class="navbar-brand" href="index.php">F & F</a>
-	    </div>
+</header>
 
-	    <!-- Collect the nav links, forms, and other content for toggling -->
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	      <ul class="nav navbar-nav">
-	        <li><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
-	        <?php
-	        	if(isLoggedIn()) {
-	        		$userName = $_SESSION['userName'];
-	        		echo "<li><a href=\"profile.php?userName= $userName\">Welcome! $userName</a></li>";
-				echo "<li><a href=\"logout.php\">Log out.</a></li>";
-				if($_SESSION['is_admin'] == 1) {
-					echo "<li><a href=\"register.php\">Register</a></li>";
-				}
-	        	} else {
-					echo "<li><a href=\"index.php\">Login</a></li>";
-	        	}
-	        ?>
-	      </ul>
-	      <form class="navbar-form navbar-right" role="search">
-	        <div class="form-group">
-	          <input type="text" class="form-control" placeholder="Search">
-	        </div>
-	        <button type="submit" class="btn btn-default">Submit</button>
-	      </form>
-	    </div><!-- /.navbar-collapse -->
-	  </div><!-- /.container-fluid -->
-	</nav>
+<nav>
+    <?php if ($pageTitle != "Login"): ?>
+    <a href="./adopt.php" id="adoptNav">Clients</a>
+    <a href="./addDog.php" id="addDogNav">Add A Client</a>
+    <?php endif; ?>
+</nav>
