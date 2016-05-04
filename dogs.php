@@ -37,7 +37,6 @@ include 'top.php';
 	    } else { echo "<img src='images/". $headShotFileName. "' width='500' height='500' style='max-width:300px; max-height:300px;'/>";}
 	    ?>
 	</div>
-	
     
 	<div id="dogTable" class="dogMain">
 	    <table>
