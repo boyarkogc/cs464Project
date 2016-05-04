@@ -1,3 +1,5 @@
+
+
 <?php
 $pageTitle = "Dogs";
 include 'control.php'; 
@@ -51,7 +53,6 @@ include 'top.php';
 	</div>
 	<hr>
 	
-	
 	<div class="digInfoTabs">
 		<ul>
 				<li><a href= <?php echo "dogContact.php?pet_id=".$petID ?> >Contact Info</a></li>
@@ -59,6 +60,10 @@ include 'top.php';
 				<li><a href= <?php echo "dogWorkout.php?pet_id=".$petID ?> >Workout</a></li>
 				<li><a href= <?php echo "dogMedical.php?pet_id=".$petID ?> >Medical History</a></li>
 		</ul>
+	</div>
+	
+	<div>
+		<p>No Cancer.</p>
 	</div>
     
     <?php include 'adoptComments.php'; ?>

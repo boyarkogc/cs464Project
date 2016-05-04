@@ -60,6 +60,10 @@ include 'top.php';
 				<li><a href= <?php echo "dogMedical.php?pet_id=".$petID ?> >Medical History</a></li>
 		</ul>
 	</div>
+	
+	<div>
+		<p>Message: hello</p>
+	</div>
     
     <?php include 'adoptComments.php'; ?>
     </div>
