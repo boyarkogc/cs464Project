@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "Dogs";
+$pageTitle = "Client";
 include 'control.php'; 
 include 'top.php'; 
 ?>
@@ -50,13 +50,14 @@ include 'top.php';
 	</div>
 	<hr>
 	
-	<?php
+<!--	<?php
 	$pictures = "SELECT * FROM PetPictures WHERE pet_id='$petID'";
 	echo "<div style='padding-left:50px'>";
 	foreach ($dbh->query($pictures) as $row){
 	    echo "<img src='images/" . $row['pictureName'] . "' width='500' height='500' style='max-width:350px; max-height:350px; padding:5px;'/>";
 	}
 	?>
+-->
 	</div>
     
     <?php include 'adoptComments.php'; ?>
