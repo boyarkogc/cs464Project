@@ -8,7 +8,7 @@
                 echo $_SESSION['username'];
                 echo "<p style='color:white; display:inline;'> / </p> ";
                 $currentPage = $_SERVER['PHP_SELF'];
-                echo "<a href='$currentPage?logout=true'>logout</a>" ;
+                echo "<a href='./login.php?logout=true'>logout</a>" ;
                 echo "<p style='color:white; display:inline;'> / </p> ";
 	    } else {
                 echo "<p style='color:white; display:inline;'> / </p> ";
