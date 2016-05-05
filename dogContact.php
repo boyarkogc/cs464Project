@@ -37,9 +37,6 @@ include 'top.php';
 	    } else { echo "<img src='images/". $headShotFileName. "' width='500' height='500' style='max-width:300px; max-height:300px;'/>";}
 	    ?>
 	</div>
-	<?php
-							echo "<a href=\"profileEdit.php?pet_id=$petID\" class=\"btn btn-primary\" style=\"margin:5px;\">Edit Profile</a>";
-	?>
     
 	<div id="dogTable" class="dogMain">
 	    <table>
@@ -61,13 +58,17 @@ include 'top.php';
 	}
 	?>
 -->
-	<div class="digInfoTabs">
+<div class="digInfoTabs">
 		<ul>
-				<li><a href= <?php echo "dogContact.php?pet_id=".$petID ?> >Contact Info</a></li>
+				<li><a href= <?php echo "dogContact.php?pet_id=".$petID ?> style="background-color:orange">Contact Info</a></li>
 				<li><a href= <?php echo "dogMessages.php?pet_id=".$petID ?> >Messages</a></li>
 				<li><a href= <?php echo "dogWorkout.php?pet_id=".$petID ?> >Workout</a></li>
 				<li><a href= <?php echo "dogMedical.php?pet_id=".$petID ?> >Medical History</a></li>
 		</ul>
+	</div>
+	
+	<div>
+		<p>Phone: 999-999-9999</p>
 	</div>
 	</div>
 	

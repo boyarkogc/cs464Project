@@ -7,7 +7,7 @@ if(isset($_SESSION['username'])){
         <p style="color:red; text-align:center;">Thank you for your comments. We will definitely hold on to them and contemplate their great meaning.</p>
         <br>
 
-    <?php 
+<?php 
     }else {
     ?>
 	<br>
@@ -20,5 +20,5 @@ if(isset($_SESSION['username'])){
     <?php
         }
     }
-    ?>
+?>
 
