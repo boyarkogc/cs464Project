@@ -214,3 +214,34 @@ footer {
     margin-top: 1em;
 }
 
+div.digInfoTabs ul{
+	list-style:none;
+	list-style-position:inside;
+	padding:5px;
+	color:black;
+}
+
+div.digInfoTabs ul li{
+	display:inline;
+	color:black;
+}
+	
+div.digInfoTabs ul li a{
+	background-color:#006699;
+	color:black;
+	border-radius:5px 5px 0 0;
+	padding:10px;
+	text-decoration:none;
+	font-size:24px;
+}
+
+div.digInfoTabs ul li a:hover{
+	background-color:orange;
+	color:black;
+}
+
+div.digInfoTabs ul li a:active{
+	background-color:red;
+	color:black;
+}
+
