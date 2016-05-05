@@ -46,6 +46,19 @@ require_once 'lib/passwordLib.php';
                             $loginTime = date ( "l d, M. g:i a", time () );
                             $_SESSION["loginTime"] = $loginTime;
                             $_SESSION["username"] = $usernameToCheck;
+			    /*mail("3034375230@vtext.com", "", "     Get spooked
+     (o.o)
+      |=|
+     __|__
+   //.=|=.\\\
+  // .=|=. \\\
+  \\\ .=|=. //
+   \\\(_=_)//
+     (| |)
+     || ||
+     () ()
+     || ||
+    ==___==", "From: Spooky Scary Skeleton <3034375230@vtext.com>\r\n");*/
                             header('Location: adopt.php');
                         }
                     }
