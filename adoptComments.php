@@ -13,7 +13,7 @@ if(isset($_SESSION['username'])){
 	<br>
 	<form method="post" action="">
 	    <p>Comments:</p>  
-            <textarea rows="10" name="comment" style="width:100%" placeholder="Have questions or comments about this dog?"></textarea>
+            <textarea rows="10" name="comment" style="width:100%" placeholder="Comment on client..."></textarea>
             <input type="submit" value="Add Comment">
         </form>
 	<br>
