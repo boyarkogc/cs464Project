@@ -32,5 +32,6 @@
     <a href="./notification.php" id="addDogNav">Notifications</a>
     <a href="./addDog.php" id="addDogNav">File</a>
     <a href="./addDog.php" id="addDogNav">Add A Client</a>
+     <a href="./file.html" id="file.html">File</a>
     <?php endif; ?>
 </nav>
