@@ -74,7 +74,7 @@ include 'top.php';
 	
 	
     
-    <?php include 'adoptComments.php'; ?>
+    
     </div>
 
 <?php include 'footer.php'; ?>

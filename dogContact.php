@@ -71,13 +71,16 @@ include 'top.php';
 	</div>
 	
 	<div>
-		<p>Phone: 999-999-9999</p>
+		<li>Phone Number: 970-123-4567</li>
+		<br>
+		<li>Email: thisismyemail@email.com</li>
+		
 	</div>
 	</div>
 	
 	
     
-    <?php include 'adoptComments.php'; ?>
+    
     </div>
 
 <?php include 'footer.php'; ?>
