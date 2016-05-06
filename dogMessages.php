@@ -10,6 +10,17 @@ include 'top.php';
 
     <div id="content">
 	<?php 
+	if (isset($_POST['send_message'])) {
+		if (isset($_POST['message_area'])) {
+			$msg = $_POST['message_area'];
+		}else {
+			$msg = "";
+		}
+		mail("3035874892@vtext.com", "", $msg, "From: Adrian <example@gmail.com>\r\n");
+		echo "hi";
+	}
+	//7203380750@tmomail.net
+
 	$petID = SQLite3::escapeString(strip_tags($_GET['pet_id']));
 
 	try{
@@ -71,8 +82,12 @@ include 'top.php';
 	</div>
 	
 	<div>
-	<textarea rows="10" cols="74" wrap="hard"></textarea><br>
-	<button type="button">send</button>
+		<form method="post" action="" >
+			<textarea id="message_area" rows="10" cols="74" wrap="hard"></textarea><br>
+			<input type="hidden" name="send_message">
+			<input type="submit" value="Submit">
+		</form>
+
 	</div>
 	</div>
 	

@@ -2,6 +2,9 @@
 $pageTitle = "Adopt";
 include 'control.php'; 
 include 'top.php'; 
+if (!isset($_SESSION['username'])) {
+	header('Location: login.php');
+}
 ?>
 
 <style>
