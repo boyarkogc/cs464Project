@@ -72,7 +72,7 @@ include 'top.php';
 	
 	<div>
 	<textarea rows="10" cols="74" wrap="hard"></textarea><br>
-	<button type="button">Send</button>
+	<button type="button">send</button>
 	</div>
 	</div>
 	
