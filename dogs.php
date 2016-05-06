@@ -37,12 +37,13 @@ include 'top.php';
 	    } else { echo "<img src='images/". $headShotFileName. "' width='500' height='500' style='max-width:300px; max-height:300px;'/>";}
 	    ?>
 	</div>
-	<?php
-							echo "<a href=\"profileEdit.php?pet_id=$petID\" class=\"btn btn-primary\" style=\"margin:5px;\">Edit Profile</a>";
-	?>
+
     
 	<div id="dogTable" class="dogMain">
 	    <table>
+	    		<?php
+							echo "<a href=\"profileEdit.php?pet_id=$petID\" class=\"btn btn-primary\" style=\"margin:5px;\">Edit Profile</a>";
+	?>
 		<tr><td class="leftData" align="right">Age:</td><td><?php echo $result['age']; ?></td></tr>
 		<tr><td class="leftData" align="right">Weight:</td><td><?php echo $result['weight']; ?></td></tr>
 	    </table>
