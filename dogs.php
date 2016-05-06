@@ -37,15 +37,38 @@ include 'top.php';
 	    } else { echo "<img src='images/". $headShotFileName. "' width='500' height='500' style='max-width:300px; max-height:300px;'/>";}
 	    ?>
 	</div>
-	<?php
-							echo "<a href=\"profileEdit.php?pet_id=$petID\" class=\"btn btn-primary\" style=\"margin:5px;\">Edit Profile</a>";
-	?>
+
     
 	<div id="dogTable" class="dogMain">
 	    <table>
+	    <?php
+							echo "<a href=\"profileEdit.php?pet_id=$petID\" class=\"btn btn-primary\" style=\"margin:5px;\"><button type='button'>Edit Profile</button></a>";
+	?>	
 		<tr><td class="leftData" align="right">Age:</td><td><?php echo $result['age']; ?></td></tr>
 		<tr><td class="leftData" align="right">Weight:</td><td><?php echo $result['weight']; ?></td></tr>
 	    </table>
+
+	    <div class="sesh">			
+		    <a href="sessionstub.txt" download><button type="button">Download</button></a>
+		    <br>
+
+		<script>
+			function printDiv(divName) {
+				var printContents = document.getElementById(divName).innerHTML;
+			     var originalContents = document.body.innerHTML;
+
+			     document.body.innerHTML = printContents;
+
+			     window.print();
+
+			     document.body.innerHTML = originalContents;
+			 }
+		</script>
+		<br>
+		<iframe src="sessionstub.txt" style="width:0;height:0;border:0; border:none;"name="frame"></iframe>
+
+		<input type="button" onclick="frames['frame'].print()" value="Print Stub">
+		</div>
 	</div>
 	<hr>
 	<div id="dogDescription">
@@ -53,14 +76,7 @@ include 'top.php';
 	</div>
 	<hr>
 	
-<!--	<?php
-	$pictures = "SELECT * FROM PetPictures WHERE pet_id='$petID'";
-	echo "<div style='padding-left:50px'>";
-	foreach ($dbh->query($pictures) as $row){
-	    echo "<img src='images/" . $row['pictureName'] . "' width='500' height='500' style='max-width:350px; max-height:350px; padding:5px;'/>";
-	}
-	?>
--->
+
 	<div class="digInfoTabs">
 		<ul>
 			<li><a href= <?php echo "dogContact.php?pet_id=".$petID ?> >Contact Info</a></li>
@@ -73,7 +89,7 @@ include 'top.php';
 	
 	
     
-    
+    <?php include 'adoptComments.php'; ?>
     </div>
 
 <?php include 'footer.php'; ?>
