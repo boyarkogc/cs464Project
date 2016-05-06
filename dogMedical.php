@@ -72,12 +72,18 @@ include 'top.php';
 	
 	<div>
 		<p><?php echo "Medical history: " . $result['medicalHistory']; ?></p>
+		<!--<ul style="list-style-type:none">
+		<li style="font-weight: bold">Client Medical History</li>
+		<br>
+		<li>August 6th 2004: Broken Collar Bone</li>
+		<li>December 25th 2013: Fractured Right hand</li>
+		</ul>-->
 	</div>
 	</div>
 	
 	
     
-    <?php include 'adoptComments.php'; ?>
+    
     </div>
 
 <?php include 'footer.php'; ?>

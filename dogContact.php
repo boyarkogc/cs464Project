@@ -72,12 +72,15 @@ include 'top.php';
 	
 	<div>
 		<p><?php echo "Phone number: " . $result['phoneNumber']; ?></p>
+		<!--<li>Phone Number: 970-123-4567</li>
+		<br>
+		<li>Email: thisismyemail@email.com</li>-->
 	</div>
 	</div>
 	
 	
     
-    <?php include 'adoptComments.php'; ?>
+    
     </div>
 
 <?php include 'footer.php'; ?>

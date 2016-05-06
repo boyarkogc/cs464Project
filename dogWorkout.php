@@ -72,12 +72,23 @@ include 'top.php';
 	
 	<div>
 		<p><?php echo "Workout: " . $result['workout']; ?></p>
+		<!--<ul style="list-style-type:none">
+		<li style="font-weight: bold">Client interested in gaining muscle mass</li>
+		<br>
+		<li>Monday: 3x Chest - 3x Triceps - 3x Abs</li>
+		<li>Tuesday: 3x Back - 3x Biceps - 30min Cardio</li>
+		<li>Wednesday: 3x Shoulders - 3x Legs - 3x Abs</li>
+		<li>Thursday: 3x Chest - 3x Triceps - 30min Cardio</li>
+		<li>Friday: 3x Back - 3x Biceps - 3x Abs</li>
+		<li>Saturday: 3x Shoulders - 3x Legs - 30min Cardio</li>
+		<li>Sunday: Rest Day!</li>
+		</ul>-->
 	</div>
 	</div>
 	
 	
     
-    <?php include 'adoptComments.php'; ?>
+   
     </div>
 
 <?php include 'footer.php'; ?>
