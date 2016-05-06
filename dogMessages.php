@@ -83,7 +83,7 @@ include 'top.php';
 	
 	<div>
 		<form method="post" action="" >
-			<textarea id="message_area" rows="10" cols="74" wrap="hard"></textarea><br>
+			<textarea id="message_area" name="message_area" rows="10" cols="74" wrap="hard"></textarea><br>
 			<input type="hidden" name="send_message">
 			<input type="submit" value="Submit">
 		</form>
