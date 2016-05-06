@@ -1,8 +1,7 @@
 <?php 
 
 function createTablePerson($dbh){
-    $sql = "CREATE TABLE Person (
-				 person_id INTEGER PRIMARY KEY,
+    $sql = "CREATE TABLE Person (person_id INTEGER PRIMARY KEY,
 				 firstName TEXT NOT NULL,
 				 middleName TEXT,
 				 lastName TEXT NOT NULL,
