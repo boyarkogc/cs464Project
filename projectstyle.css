@@ -244,4 +244,15 @@ div.digInfoTabs ul li a:active{
 	background-color:red;
 	color:black;
 }
-
+table {
+    text-align: center;
+    
+}
+th{
+    padding: 50px;
+}
+td{
+   text-align: left;
+   padding: 50px;
+  
+}
