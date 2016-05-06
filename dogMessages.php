@@ -71,7 +71,8 @@ include 'top.php';
 	</div>
 	
 	<div>
-		<p>Message: hellop</p>
+	<textarea rows="10" cols="74" wrap="hard"></textarea><br>
+	<button type="button">Send</button>
 	</div>
 	</div>
 	
