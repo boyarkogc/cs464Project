@@ -1,7 +1,11 @@
 <?php
+
 $pageTitle = "Client";
 include 'control.php'; 
 include 'top.php'; 
+if (!isset($_SESSION['username'])) {
+	header('Location: login.php');
+}
 ?>
 </head>
 <body>

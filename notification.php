@@ -2,6 +2,9 @@
 $pageTitle = "Client";
 include 'control.php'; 
 include 'top.php'; 
+if (!isset($_SESSION['username'])) {
+	header('Location: login.php');
+}
 ?>
 <link href="projectstyle.css" rel="stylesheet" type="text/css">
 </head>
