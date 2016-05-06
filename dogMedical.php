@@ -71,7 +71,7 @@ include 'top.php';
 	</div>
 	
 	<div>
-		<p>No Cancer.</p>
+		<p><?php echo "Medical history: " . $result['medicalHistory']; ?></p>
 	</div>
 	</div>
 	

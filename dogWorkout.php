@@ -71,7 +71,7 @@ include 'top.php';
 	</div>
 	
 	<div>
-		<p>Workout: 10am - 5pm MWF</p>
+		<p><?php echo "Workout: " . $result['workout']; ?></p>
 	</div>
 	</div>
 	

@@ -71,7 +71,7 @@ include 'top.php';
 	</div>
 	
 	<div>
-		<p>Phone: 999-999-9999</p>
+		<p><?php echo "Phone number: " . $result['phoneNumber']; ?></p>
 	</div>
 	</div>
 	
