@@ -244,6 +244,7 @@ div.digInfoTabs ul li a:active{
 	background-color:red;
 	color:black;
 }
+<<<<<<< HEAD
 table {
     text-align: center;
     
@@ -256,3 +257,10 @@ td{
    padding: 50px;
   
 }
+=======
+
+div.sesh{
+    float:right;
+    
+}
+>>>>>>> aae130429e61eb09c71748b3afcdfcacb50cf6f4
