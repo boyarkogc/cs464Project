@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "Add_A_Dog";
+$pageTitle = "Edit Profile";
 include 'control.php'; 
 include 'top.php'; 
 ?>
@@ -18,6 +18,18 @@ include 'top.php';
             if(!isset($_SESSION["username"])){
                 header("Location:login.php");
             }
+
+    $petID = SQLite3::escapeString(strip_tags($_GET['pet_id']));
+
+	try{
+	    $dbh = new PDO("sqlite:doghouse.db");
+	} catch(PDOException $e) {
+	    echo 'Connection failed. Error: ' . $e->getMessage();
+	}
+
+	$sql = "SELECT * FROM Pets WHERE pet_id='$petID'";
+	$result = $dbh->query($sql)->fetch();
+
         ?>
 
     	<div id="loginForm">
@@ -37,14 +49,12 @@ include 'top.php';
                     echo 'Connection failed. Error: ' . $e->getMessage();
                 }
         
-
-                $sql = "INSERT INTO Pets (name, weight, age, neutered, shortText, longText) VALUES (:name,:weight,:age,:neutered,:shortText,:longText)";
+                $sql = "UPDATE Pets SET name=:name, weight=:weight, age=:age, neutered=:neutered, shortText=:shortText, longText=:longText WHERE pet_id=$petID";
                 $stmt = $dbh->prepare($sql);
                 $stmt->execute( array( ":name" => $petName, ":weight" => $petWeight, ":age" => $petAge, ":neutered" => $petNeutered, ":shortText" => $petSD, ":longText" => $petLD));
 	       
-                $dogID = $dbh->lastInsertID("id");
                 
-                header("Location: addDogPictures.php?pet_id=$dogID");
+                header("Location: dogs.php?pet_id=$petID");
 	    
 
             } else { //propose form or validation
@@ -63,7 +73,7 @@ include 'top.php';
 		    echo "<p>Name: " . $petName . "</p>";
 		    echo "<p>Weight: " . $petWeight . "</p>";
 		    echo "<p>Age: " . $petAge . "</p>";
-		   # echo "<p>Neuteured: " . ($petNeutered==0 ? "No" : "Yes") . "</p>";
+		    #echo "<p>Neuteured: " . ($petNeutered==0 ? "No" : "Yes") . "</p>";
 		    echo "<p>Short Description: " . $petSD . "</p>";
 		    echo "<p>Long Description: " . $petLD . "</p>";
 		    ?>
@@ -84,13 +94,13 @@ include 'top.php';
 		<?php
 		} else { //Form has not been filled out
 		?>
-		    <h2>Add a Client</h2>
+		    <h2>Edit Profile</h2>
 		    <form method="post" >
-			Client Name<br/> <input type="text" name="petName" size="30" required><br/><br/>
-			Weight <br/><input type="number" name="petWeight"   min="0" max="999" size="3" required> lbs.<br/><br/>
-			Age<br/> <input type="number" name="petAge"    size="3" min="0" max="999" required><br/><br/>
-			Short Description (50 characters)<br/> <input type="text" name="petSD" maxlength="50" size="50" required><br/><br/>
-			Long Description (50-250 characters)<br/> <textarea rows="3" name="petLD" maxlength="250" style="width:40em" required></textarea><br/><br/>
+			Client Name<br/> <input type="text" name="petName" value="<?php echo$result['name']?>" size="30" required><br/><br/>
+			Weight <br/><input type="number" name="petWeight"   min="0" max="999" size="3"  value="<?php echo$result['weight']?>"required> lbs.<br/><br/>
+			Age<br/> <input type="number" name="petAge"    size="3" min="0" max="999"  value="<?php echo$result['age']?>" required><br/><br/>
+			Contact Information <br/> <input type="text" name="petSD" maxlength="100" size="50"  value="<?php echo$result['shortText']?>" required><br/><br/>
+			Long Description <br/> <input type="text" name="petLD" maxlength="250" style="width:40em" value="<?php echo$result['longText']?>" required><br/><br/>
 			<input type="submit" value="Submit">
 		    </form>
 
