@@ -37,7 +37,8 @@ require_once 'lib/passwordLib.php';
                     echo 'Connection failed (Help!): ' . $e->getMessage ();
                 }
             
-                $stmt = $dbh->query('SELECT  username, password FROM Person');
+
+                $stmt = $dbh->query('SELECT  username, password,person_id FROM Person');
                 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 foreach ($result as $User) {
@@ -46,6 +47,7 @@ require_once 'lib/passwordLib.php';
                             $loginTime = date ( "l d, M. g:i a", time () );
                             $_SESSION["loginTime"] = $loginTime;
                             $_SESSION["username"] = $usernameToCheck;
+                            $_SESSION["PID"] = $User['person_id'];
 			    /*mail("3034375230@vtext.com", "", "     Get spooked
      (o.o)
       |=|

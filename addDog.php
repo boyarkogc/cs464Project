@@ -34,17 +34,24 @@ include 'top.php';
 		$carrier = SQLite3::escapeString($_POST["carrier"]);
 		$workout = SQLite3::escapeString($_POST["workout"]);
 		$medical = SQLite3::escapeString($_POST["medical"]);
+		$trainer = SQLite3::escapeString($_POST["person_id"]);
                 
                 try {
                     $dbh = new PDO("sqlite:doghouse.db");
                 } catch(PDOException $e) {
                     echo 'Connection failed. Error: ' . $e->getMessage();
                 }
-        
+        		
+ #       		$nm= $_SESSION['username'];
+  #      		$pid = "SELECT person_id FROM Person WHERE username = '$nm' ";
+   #     		$result = $dbh->query($pid);
+    #    		$tID= $result['person_id'] ;
 
-                $sql = "INSERT INTO Pets (name, weight, age, neutered, shortText, longText, phoneNumber, medicalHistory, workout) VALUES (:name,:weight,:age,:neutered,:shortText,:longText,:phoneNumber,:medicalHistory,:workout)";
+        		$tID=$_SESSION['PID'];
+
+                $sql = "INSERT INTO Pets (name, weight, age, neutered, shortText, longText, phoneNumber, medicalHistory, workout, person_id) VALUES (:name,:weight,:age,:neutered,:shortText,:longText,:phoneNumber,:medicalHistory,:workout, :tID)";
                 $stmt = $dbh->prepare($sql);
-                $stmt->execute( array( ":name" => $petName, ":weight" => $petWeight, ":age" => $petAge, ":neutered" => $petNeutered, ":shortText" => $petSD, ":longText" => $petLD, ":phoneNumber" => $phoneNum . "@" . $carrier, ":medicalHistory" => $medical, ":workout" => $workout));
+                $stmt->execute( array( ":name" => $petName, ":weight" => $petWeight, ":age" => $petAge, ":neutered" => $petNeutered, ":shortText" => $petSD, ":longText" => $petLD, ":phoneNumber" => $phoneNum . "@" . $carrier, ":medicalHistory" => $medical, ":workout" => $workout, ":tID" => $tID));
 	       
                 $dogID = $dbh->lastInsertID("pet_id");
                 
@@ -64,6 +71,7 @@ include 'top.php';
 		    $carrier = strip_tags($_POST["carrier"]);
 		    $workout = strip_tags($_POST["workout"]);
 		    $medical = strip_tags($_POST["medical"]);
+
 
 		    
 

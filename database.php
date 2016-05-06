@@ -31,7 +31,9 @@ function createTablePets($dbh){
 			       phoneNumber TEXT NOT NULL,
 			       medicalHistory TEXT NOT NULL,
 			       workout TEXT NOT NULL,
-			       longText TEXT NOT NULL)";
+			       longText TEXT NOT NULL,
+			       person_id INTEGER NOT NULL,
+			       FOREIGN KEY (person_id) REFERENCES Person(person_id))";
     $status = $dbh->exec ($sql);
     if ($status === FALSE) {
 	print_r ($dbh->errorInfo());
