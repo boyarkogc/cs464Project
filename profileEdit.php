@@ -42,6 +42,9 @@ include 'top.php';
                 $petNeutered = SQLite3::escapeString ($_POST["petNeutered"]);
                 $petSD = SQLite3::escapeString ($_POST["petSD"]);
                 $petLD = SQLite3::escapeString ($_POST["petLD"]);
+		$phoneNum = SQLite3::escapeString ($_POST["phoneNum"]);
+		$workout = SQLite3::escapeString ($_POST["workout"]);
+		$medical = SQLite3::escapeString ($_POST["medical"]);
                 
                 try {
                     $dbh = new PDO("sqlite:doghouse.db");
@@ -49,9 +52,9 @@ include 'top.php';
                     echo 'Connection failed. Error: ' . $e->getMessage();
                 }
         
-                $sql = "UPDATE Pets SET name=:name, weight=:weight, age=:age, neutered=:neutered, shortText=:shortText, longText=:longText WHERE pet_id=$petID";
+                $sql = "UPDATE Pets SET name=:name, weight=:weight, age=:age, neutered=:neutered, shortText=:shortText, longText=:longText, phoneNumber=:phoneNumber, workout=:workout, medicalHistory=:medical WHERE pet_id=$petID";
                 $stmt = $dbh->prepare($sql);
-                $stmt->execute( array( ":name" => $petName, ":weight" => $petWeight, ":age" => $petAge, ":neutered" => $petNeutered, ":shortText" => $petSD, ":longText" => $petLD));
+                $stmt->execute( array( ":name" => $petName, ":weight" => $petWeight, ":age" => $petAge, ":neutered" => $petNeutered, ":shortText" => $petSD, ":longText" => $petLD, ":phoneNumber" => $phoneNum, ":workout" => $workout, ":medical" => $medical));
 	       
                 
                 header("Location: dogs.php?pet_id=$petID");
@@ -66,6 +69,9 @@ include 'top.php';
                     $petNeutered =  (isset($_POST["petNeutered"]) ? 1 : 0);
                     $petSD = strip_tags($_POST["petSD"]);
                     $petLD = strip_tags($_POST["petLD"]);
+		    $phoneNum = strip_tags($_POST["phoneNum"]);
+		    $workout = strip_tags($_POST["workout"]);
+		    $medical = strip_tags($_POST["medical"]);
 
 		    
 
@@ -76,6 +82,9 @@ include 'top.php';
 		    #echo "<p>Neuteured: " . ($petNeutered==0 ? "No" : "Yes") . "</p>";
 		    echo "<p>Short Description: " . $petSD . "</p>";
 		    echo "<p>Long Description: " . $petLD . "</p>";
+		    echo "<p>Phone Number: " . $phoneNum . "</p>";
+		    echo "<p>Workout: " . $workout . "</p>";
+		    echo "<p>Medical History: " . $medical . "</p>";
 		    ?>
 
 		    <form style="display:inline" method="post" >
@@ -84,6 +93,9 @@ include 'top.php';
 			<input type="hidden" name="petAge" value="<?php echo $petAge ?>">
 			<input type="hidden" name="petSD" value="<?php echo $petSD ?>">
 			<input type="hidden" name="petLD" value="<?php echo $petLD ?>">
+			<input type="hidden" name="phoneNum" value="<?php echo $phoneNum ?>">
+			<input type="hidden" name="workout" value="<?php echo $workout ?>">
+			<input type="hidden" name="medical" value="<?php echo $medical ?>">
 			<input type="hidden" name="setInfo">
 			<input type="submit" value="Yes">
 		    </form>
@@ -101,6 +113,9 @@ include 'top.php';
 			Age<br/> <input type="number" name="petAge"    size="3" min="0" max="999"  value="<?php echo$result['age']?>" required><br/><br/>
 			Contact Information <br/> <input type="text" name="petSD" maxlength="100" size="50"  value="<?php echo$result['shortText']?>" required><br/><br/>
 			Long Description <br/> <input type="text" name="petLD" maxlength="250" style="width:40em" value="<?php echo$result['longText']?>" required><br/><br/>
+			Phone Number <br/> <input type="text" name="phoneNum" maxlength="250" style="width:40em" value="<?php echo$result['phoneNumber']?>" required><br/><br/>
+			Workout <br/> <input type="text" name="workout" maxlength="250" style="width:40em" value="<?php echo$result['workout']?>" required><br/><br/>
+			Medical History <br/> <input type="text" name="medical" maxlength="250" style="width:40em" value="<?php echo$result['medicalHistory']?>" required><br/><br/>
 			<input type="submit" value="Submit">
 		    </form>
 

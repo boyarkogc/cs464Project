@@ -30,6 +30,10 @@ include 'top.php';
                 $petNeutered = SQLite3::escapeString ($_POST["petNeutered"]);
                 $petSD = SQLite3::escapeString ($_POST["petSD"]);
                 $petLD = SQLite3::escapeString ($_POST["petLD"]);
+		$phoneNum = SQLite3::escapeString($_POST["phoneNum"]);
+		$carrier = SQLite3::escapeString($_POST["carrier"]);
+		$workout = SQLite3::escapeString($_POST["workout"]);
+		$medical = SQLite3::escapeString($_POST["medical"]);
                 
                 try {
                     $dbh = new PDO("sqlite:doghouse.db");
@@ -38,11 +42,11 @@ include 'top.php';
                 }
         
 
-                $sql = "INSERT INTO Pets (name, weight, age, neutered, shortText, longText) VALUES (:name,:weight,:age,:neutered,:shortText,:longText)";
+                $sql = "INSERT INTO Pets (name, weight, age, neutered, shortText, longText, phoneNumber, medicalHistory, workout) VALUES (:name,:weight,:age,:neutered,:shortText,:longText,:phoneNumber,:medicalHistory,:workout)";
                 $stmt = $dbh->prepare($sql);
-                $stmt->execute( array( ":name" => $petName, ":weight" => $petWeight, ":age" => $petAge, ":neutered" => $petNeutered, ":shortText" => $petSD, ":longText" => $petLD));
+                $stmt->execute( array( ":name" => $petName, ":weight" => $petWeight, ":age" => $petAge, ":neutered" => $petNeutered, ":shortText" => $petSD, ":longText" => $petLD, ":phoneNumber" => $phoneNum . "@" . $carrier, ":medicalHistory" => $medical, ":workout" => $workout));
 	       
-                $dogID = $dbh->lastInsertID("id");
+                $dogID = $dbh->lastInsertID("pet_id");
                 
                 header("Location: addDogPictures.php?pet_id=$dogID");
 	    
@@ -56,6 +60,10 @@ include 'top.php';
                     $petNeutered =  (isset($_POST["petNeutered"]) ? 1 : 0);
                     $petSD = strip_tags($_POST["petSD"]);
                     $petLD = strip_tags($_POST["petLD"]);
+		    $phoneNum = strip_tags($_POST["phoneNum"]);
+		    $carrier = strip_tags($_POST["carrier"]);
+		    $workout = strip_tags($_POST["workout"]);
+		    $medical = strip_tags($_POST["medical"]);
 
 		    
 
@@ -66,6 +74,10 @@ include 'top.php';
 		   # echo "<p>Neuteured: " . ($petNeutered==0 ? "No" : "Yes") . "</p>";
 		    echo "<p>Short Description: " . $petSD . "</p>";
 		    echo "<p>Long Description: " . $petLD . "</p>";
+		    echo "<p>Phone Number: " . $phoneNum . "</p>";
+		    echo "<p>Phone Carrier: " . $carrier . "</p>";
+		    echo "<p>Workout info: " . $workout . "</p>";
+		    echo "<p>Medical History: " . $medical . "</p>";
 		    ?>
 
 		    <form style="display:inline" method="post" >
@@ -74,6 +86,10 @@ include 'top.php';
 			<input type="hidden" name="petAge" value="<?php echo $petAge ?>">
 			<input type="hidden" name="petSD" value="<?php echo $petSD ?>">
 			<input type="hidden" name="petLD" value="<?php echo $petLD ?>">
+			<input type="hidden" name="phoneNum" value="<?php echo $phoneNum ?>">
+			<input type="hidden" name="carrier" value="<?php echo $carrier ?>">
+			<input type="hidden" name="workout" value="<?php echo $workout ?>">
+			<input type="hidden" name="medical" value="<?php echo $medical ?>">
 			<input type="hidden" name="setInfo">
 			<input type="submit" value="Yes">
 		    </form>
@@ -91,6 +107,10 @@ include 'top.php';
 			Age<br/> <input type="number" name="petAge"    size="3" min="0" max="999" required><br/><br/>
 			Short Description (50 characters)<br/> <input type="text" name="petSD" maxlength="50" size="50" required><br/><br/>
 			Long Description (50-250 characters)<br/> <textarea rows="3" name="petLD" maxlength="250" style="width:40em" required></textarea><br/><br/>
+			Phone number<br/> <input type="text" name="phoneNum"    size="3" min="0" max="999" required><br/><br/>
+			Phone carrier(eg. Verizon, AT&T, etc.)<br/> <input type="text" name="carrier"    size="3" min="0" max="999" required><br/><br/>
+			Workout information<br/> <input type="text" name="workout"    size="3" min="0" max="999" required><br/><br/>
+			Medical History<br/> <input type="text" name="medical"    size="3" min="0" max="999" required><br/><br/>
 			<input type="submit" value="Submit">
 		    </form>
 

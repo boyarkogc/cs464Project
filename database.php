@@ -32,7 +32,6 @@ function createTablePets($dbh){
 			       medicalHistory TEXT NOT NULL,
 			       workout TEXT NOT NULL,
 			       longText TEXT NOT NULL)";
-
     $status = $dbh->exec ($sql);
     if ($status === FALSE) {
 	print_r ($dbh->errorInfo());

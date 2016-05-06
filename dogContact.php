@@ -71,10 +71,10 @@ include 'top.php';
 	</div>
 	
 	<div>
-		<li>Phone Number: 970-123-4567</li>
+		<p><?php echo "Phone number: " . $result['phoneNumber']; ?></p>
+		<!--<li>Phone Number: 970-123-4567</li>
 		<br>
-		<li>Email: thisismyemail@email.com</li>
-		
+		<li>Email: thisismyemail@email.com</li>-->
 	</div>
 	</div>
 	
